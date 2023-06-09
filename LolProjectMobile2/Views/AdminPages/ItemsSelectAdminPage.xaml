@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LolProjectMobile2.ItemsSelectAdminPage" Title="ItemsTables">
+    <ContentPage.Content>
+        <StackLayout Background="#373636">
+            <StackLayout Background="#FF4B4747" Margin="15,80,15,0">
+                <StackLayout Margin="15">
+                    <Button Text="Items" x:Name="ItemButton" Clicked="ItemButton_Clicked"/>
+            <Button Text="Items_Difference" x:Name="Items_Difference" Clicked="Items_Difference_Clicked"/>
+            <Button Text="ItemsDifferents" x:Name="ItemsDifferents" Clicked="ItemsDifferents_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

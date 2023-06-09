@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LolProjectMobile2.AdminPage" Title="AdminPage">
+    <ContentPage.Content>
+        <StackLayout Background="#373636">
+            <StackLayout HorizontalOptions="Center" Background="#373636">
+            <Label Text="Добро пожаловать" />
+            <Label Text="Выберите куда хотите перейти"/>
+            <Button Margin="15" Text="Heroes"/>
+            <Button Margin="15" Text="Items" Clicked="Button_Clicked"/>
+            <Button Margin="15" Text="Scales"/>
+            <Button Margin="15" Text="Polzovatels"/>
+            <Button Margin="15" Text="Appeals" x:Name="AppealBut" Clicked="AppealBut_Clicked"/>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

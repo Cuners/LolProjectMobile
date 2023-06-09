@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LolProjectMobile2"
+             x:DataType="local:HeroesVM"
+             x:Class="LolProjectMobile2.HeroesSelectPage" Title="{Binding Path=NameHero}">
+    <ContentPage.Resources>
+        <local:ByteArrayToBitmapImageConverter x:Key="ByteArrayToImageConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Background="#373636" Orientation="Vertical">
+            <Label HorizontalOptions="Center" Text="{Binding Path=NameHero}"></Label>
+            <Image WidthRequest="100" HeightRequest="100" Source="{Binding ImageHero,Converter={StaticResource ByteArrayToImageConverter}}"/> 
+            <StackLayout HorizontalOptions="Center">
+                <Label>Базовые характеристики</Label>
+                
+                <StackLayout>
+                    <Picker  TextColor="White" SelectedItem="{Binding Level}">
+                            <Picker.Items>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                                <x:String>7</x:String>
+                                <x:String>8</x:String>
+                                <x:String>9</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                            </Picker.Items>
+                    </Picker>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="#FF4B4747">
+                        <StackLayout Orientation="Vertical">
+                            <Label>Здоровье</Label>
+                            <Label Text="{Binding Health}"/>
+                            <Label>Броня</Label>
+                            <Label Text="{Binding Armor}"/>
+                            <Label>АД</Label>
+                            <Label Text="{Binding AD}"/>
+                            <Label>Передвижение</Label>
+                            <Label Text="{Binding MoveSpeed}"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label>Мана</Label>
+                            <Label Text="{Binding Mana}"/>
+                            <Label>Резист</Label>
+                            <Label Text="{Binding ResistMagic}"/>
+                            <Label>Крит</Label>
+                            <Label Text="{Binding Crit}"/>
+                            <Label>Скорость атаки</Label>
+                            <Label Text="{Binding Attack_speed}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FF4B4747">
+                        <StackLayout Orientation="Horizontal">
+                            <Image WidthRequest="25" HeightRequest="25" Source="{Binding ImageSkill1,Converter={StaticResource ByteArrayToImageConverter}}"/>
+                            <Label Text="{Binding Opisanie}"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image WidthRequest="25" HeightRequest="25" Source="{Binding ImageSkill2,Converter={StaticResource ByteArrayToImageConverter}}"/>
+                            <Label Text="{Binding Opisanie2}"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image WidthRequest="25" HeightRequest="25" Source="{Binding ImageSkill3,Converter={StaticResource ByteArrayToImageConverter}}"/>
+                            <Label Text="{Binding Opisanie3}"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image WidthRequest="25" HeightRequest="25" Source="{Binding ImageSkill4,Converter={StaticResource ByteArrayToImageConverter}}"/>
+                            <Label Text="{Binding Opisanie4}"></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </StackLayout> 
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

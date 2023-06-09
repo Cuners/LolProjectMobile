@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LolProjectMobile2" x:DataType="local:AppealUserVM"
+             x:Class="LolProjectMobile2.AppealPage" Title="Appeal">
+    <ContentPage.Content>
+        <StackLayout Background="#373636" >
+            <StackLayout Margin="15">
+                <Label FontSize="10" Text="Login"/>
+                <Label Text="{Binding UserLogin}" ></Label>
+                <Entry Placeholder="Tema" Text="{Binding Tema}"></Entry>
+                <Entry Placeholder="Opisanie" Text="{Binding Opisanie}"></Entry>
+                <StackLayout>
+                    <Button Text="Отправить" Command="{Binding SaveAppealCom}"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

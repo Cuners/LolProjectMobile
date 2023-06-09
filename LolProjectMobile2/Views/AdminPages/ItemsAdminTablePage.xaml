@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LolProjectMobile2"
+             x:Class="LolProjectMobile2.ItemsAdminTablePage" Title="ItemsAdmin">
+    <ContentPage.Resources>
+        <local:ByteArrayToBitmapImageConverter x:Key="ByteArrayToImageConverter" />
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding CreateItemCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Background="#373636" >
+            <SearchBar Placeholder="Search" TextChanged="SearchBar_TextChanged" TextColor="White" PlaceholderColor="Gray"></SearchBar>
+            <Label HorizontalOptions="Center">Предметы</Label>
+            <ListView x:Name="itemsListView"  SelectedItem="{Binding SelectedItems,Mode=TwoWay}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" >
+                                <Image Margin="20,10,0,0" HorizontalOptions="Start" WidthRequest="50" HeightRequest="50"  Source="{Binding ImageItem,Converter={StaticResource ByteArrayToImageConverter}}"></Image>
+                                <Label Margin="20,0,0,0" Text="{Binding ItemName}" TextColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

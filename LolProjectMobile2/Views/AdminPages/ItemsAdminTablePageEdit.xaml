@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LolProjectMobile2" x:DataType="local:ItemsAdminVM"
+             x:Class="LolProjectMobile2.ItemsAdminTablePageEdit" Title="EditItems">
+    <ContentPage.Resources>
+        <local:ByteArrayToBitmapImageConverter x:Key="ByteArrayToImageConverter" />
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Background="#373636">
+            <StackLayout Background="#FF4B4747" Margin="15,80,15,0">
+                <StackLayout Margin="15">
+                    <Entry Placeholder="ItemName" Text="{Binding ItemName}"/>
+                    <Image Source="{Binding ImageItem,Converter={StaticResource ByteArrayToImageConverter}}" WidthRequest="100" HeightRequest="100"/>
+                    <Entry Text="{Binding AD}" Placeholder="AD"/>
+                    <Entry Text="{Binding AP}" Placeholder="AP"/>
+                    <Entry Text="{Binding Armor}" Placeholder="Armor"/>
+                    <Entry Text="{Binding Attack_speed}" Placeholder="Attack_speed"/>
+                    <Entry Text="{Binding Crit}" Placeholder="Crit"/>
+                    <Entry Text="{Binding HP}" Placeholder="HP"/>
+                    <Entry Text="{Binding Movement}" Placeholder="Movement"/>
+                    <Entry Text="{Binding Modificators}" Placeholder="Modificators"/>
+                    <Button Text="Выбрать картинку"  Command="{Binding TakePhoto}"/>
+                        <Button Text="Сохранить" Command="{Binding ItemsAdminVMList.SaveItemCommand}" CommandParameter="{Binding}"/>
+                        <Button Command="{Binding ItemsAdminVMList.DeleteItemCommand}" CommandParameter="{Binding}" Text="Удалить"/>
+                        <Button  Command="{Binding ItemsAdminVMList.BackCommand}" Text="Назад"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

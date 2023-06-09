@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LolProjectMobile2"
+             x:DataType="local:AuthAndRegistVM"
+             
+             x:Class="LolProjectMobile2.AuthorizationPage" Title="Authorization">
+    <ContentPage.Content>
+        <StackLayout Background="#373636">
+            <StackLayout Background="#FF4B4747" Margin="15,130,15,0">
+                <StackLayout Margin="15">
+                    <local:ImageEntry TextColor="White" 
+                        PlaceholderColor="Gray"
+                        Image="person" 
+                        Placeholder="Login" 
+                        Text="{Binding Login}"
+                        HorizontalOptions="FillAndExpand"/>
+                    <local:ImageEntry TextColor="White" 
+                        PlaceholderColor="Gray"
+                        Image="keyicon" 
+                        Placeholder="Password" 
+                        Text="{Binding Password}"
+                        HorizontalOptions="FillAndExpand"/>
+                    
+                   
+                    <Label TextColor="White" Text="{Binding Mes}"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Command="{Binding AuthLoginCommand}" Text="Авторизация"/>
+                    <Button Command="{Binding GoToRegist}" Text="Регистрация"/>
+                </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
